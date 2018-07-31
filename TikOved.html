@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>ETMS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<meta charset="utf-8">
+</head>
+
+<body class="padR10 padL10 ng-scope" ng-controller="main" ng-init="init();">
+    <div id="overlay"></div>
+    <div class="row">
+        <div>
+            <div class="page-header">
+                <div>
+                    <h1 class="headerh1 headrRashi">
+                        פתיחת תיק עובד <small class="displayInlineBlock ng-binding">תיק מידע אישי</small>
+                    </h1>
+               </div>    
+            </div>
+			
+            <div id="mainContent">
+                <div class="container-fluid clearfix">
+                    <section class="clearfix clear">
+                        <div class="clearfix">
+                            <div id="alerts"></div>
+                            <div class="clearfix" style="background-color:#fff;margin-top:0px;">
+                                <section class="clearfix clear">
+                                  <div class="container-fluid ng-scope" ng-view=""><div ng-controller="TofesBakashaSismaCtrl" ng-init="init();" class="ng-scope">
+    
+    <div class="panel panel-default panel-bakasha paddingAll10">
+        <form name="myForm" id="myForm" autocomplete="off" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-mispar-zehut ng-valid-minlength ng-valid-email">
+            <label class="row tikColor"></label>
+			<h4> פרטים אישיים </h4>
+            <div class="row">
+				<div class="form-group col-md-2 col-lg-2">
+                  <label id="lblMisparZehut" class="control-label" for="txtMisparZehut">מספר עובד</label>
+                        <input type="text" id="txtMisparZehut" name="txtMisparZehut" ng-required="true" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-mispar-zehut" misparzehut="" ng-model="tofesBakashaSismaData.MISPAR_ZEHUT_TIK" ng-pattern="/^(\d)+$/" ng-maxlength="9" ng-blur="bdokIsOvh()" ng-disabled="userInOvh" required="required">
+				</div>
+				        
+				<label id="lblMisparZehut" class="control-label" for="txtMisparZehut">תעודת זהות</label>
+                <div class="form-group col-md-2 col-lg-2">
+				<div>				  					
+				<input type="text" id="txtMisparZehut" name="txtMisparZehut" value="" placeholder="" maxlength="9" min="000000000" max="999999999" title="תעודת זהות" class="form-control /[\d]{9}/g required">
+					<div class="lengthIndicator" style="display: none; left: 178px;">נשארו 6 תווים</div>
+				</div>
+				<span class="field-hint-inactive" id="tfa_4-H" style="left: 0px; top: 20px;"><span id="tfa_4-HH" class="hint">נא להזין ת.ז. עם 9 ספרות</span></span>
+				</div>
+						
+						
+						
+						
+						
+				<div class="form-group col-md-2 col-lg-2">
+                    <label id="lblfirstName" class="control-label">שם פרטי</label>
+                        <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+                </div>
+                <div class="form-group col-md-2 col-lg-2">
+                    <label id="lblShemMishpacha" class="control-label">שם משפחה</label>
+                        <input ng-required="true" ng-maxlength="24" type="text" name="txtShemMishpacha" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_MISHPACHA_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+                </div>
+                <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                   <label class="control-label">תאריך לידה</label>
+                        <input type="text" id="txtTarLeda" name="txtTarLeda" class="form-control col-md-6 ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-model="tofesBakashaSismaData.tarLeda" required="" ng-maxlength="10" ng-minlength="10" datepickerpattern="" ng-pattern="/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})|([0-9]{8})/" ng-disabled="userInOvh" date-before="maxTarLeda" date-after="minTarLeda" date-or-equals="true">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">מין</label>
+                    <select name="MinSelect" id="MinSelect" ng-required="true" ng-options="item.CODE as item.TEUR for item in MinList" ng-disabled="userInOvh" ng-model="tofesBakashaSismaData.CODE_MIN_TIK" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required"><option value="?" selected="selected"></option><option label="זכר" value="number:1">זכר</option><option label="נקבה" value="number:2">נקבה</option></select>
+                </div>
+				 <div class="form-group col-md-2 col-lg-2">
+                   <label id="lblId" class="control-label" for="MinSelect">מצב משפחתי</label>
+                    <select name="MinSelect" id="MinSelect" ng-required="true" ng-options="item.CODE as item.TEUR for item in MinList" ng-disabled="userInOvh" ng-model="tofesBakashaSismaData.CODE_MIN_TIK" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required"><option value="?" selected="selected"></option><option label="נשוי" value="number:1">נשוי</option><option label="גרוש" value="number:2">גרוש</option><option label="רווק/ה" value="number:3">רווק/ה</option></select>
+                </div>
+                <div class="form-group col-md-4 col-lg-4">
+				<label id="lblEmail" class="control-label">דואר אלקטרוני</label>
+                        <input type="email" ng-required="true" name="txtEmail" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-email" ng-model="tofesBakashaSismaData.DOAR_ELEKTRONI_TIK" dir="ltr" ng-disabled="userInOvh" ng-maxlength="50" required="required">
+                </div>
+                <div class="form-group col-md-4 col-lg-4">
+					<label id="lblLastName" class="control-label">טלפון סלולרי</label>
+                    <div class="form-inline" ng-class="{ 'has-error' : myForm.txtPel.$invalid &amp;&amp; !myForm.txtPel.$pristine  }">
+                        <input type="text" id="txtPel" name="txtPel" ng-model="tofesBakashaSismaData.TELEFON_NAYAD_TIK" ng-required="true" class="form-control col-6 displayInlineBlock ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-pattern="/^(\d)+$/" ng-maxlength="7" ng-minlength="7" ng-disabled="userInOvh" required="required"> -
+                        <select name="KidometSelect" id="KidometSelect" ng-required="true" ng-options="item.CODE as item.CODE for item in KidometList" ng-model="tofesBakashaSismaData.CODE_KIDOMET" class="form-control col-4 displayInlineBlock ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-disabled="userInOvh" required="required"><option value="?" selected="selected"></option><option label="054" value="string:054">054</option><option label="051" value="string:051">051</option><option label="059" value="string:059">059</option><option label="058" value="string:058">058</option><option label="053" value="string:053">053</option><option label="055" value="string:055">055</option><option label="052" value="string:052">052</option><option label="050" value="string:050">050</option><option label="056" value="string:056">056</option></select>
+					</div>
+                </div>
+            </div>
+			    <div class="row">
+                <div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">ישוב</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+					</div>
+				<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">רחוב</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+					</div>	
+					<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">מס' בית</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+					</div>
+					<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">דירה</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+					</div>
+					<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">מיקוד</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+					</div>
+                </div>
+				
+			    <div class="row">
+				<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">סוג משרה</label>
+                    <select name="MinSelect" id="MinSelect" ng-required="true" ng-options="item.CODE as item.TEUR for item in MinList" ng-disabled="userInOvh" ng-model="tofesBakashaSismaData.CODE_MIN_TIK" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required"><option value="?" selected="selected"></option><option label="מלאה" value="number:1">מלאה</option><option label="חלקית" value="number:2">חלקית</option></select>
+                </div>
+               <div class="form-group col-md-2 col-lg-2">
+                    <label id="lblfirstName" class="control-label">תפקיד</label>
+                        <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+                </div>
+				<div class="form-group col-md-2 col-lg-2">
+                    <label id="lblfirstName" class="control-label">מחלקה</label>
+                        <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+                </div>
+				<div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">שכר</label>
+                     <input ng-required="true" ng-maxlength="12" type="text" name="txtShemPrati" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" ng-model="tofesBakashaSismaData.SHEM_PRATI_TIK" ng-pattern="/^[\u0590-\u05FF ]+$/" ng-disabled="userInOvh" required="required">
+				</div>
+				</div>
+				
+			 <div class="row">
+                <div class="form-group col-md-2 col-lg-2">
+					<label id="lblId" class="control-label" for="MinSelect">מצב עובד</label>
+                    <select name="MinSelect" id="MinSelect" ng-required="true" ng-options="item.CODE as item.TEUR for item in MinList" ng-disabled="userInOvh" ng-model="tofesBakashaSismaData.CODE_MIN_TIK" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" required="required"><option value="?" selected="selected"></option><option label="פעיל" value="number:1">פעיל</option><option label="לא פעיל" value="number:2">לא פעיל</option></select>
+                </div>
+				    <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                   <label class="control-label">תאריך תחילת עבודה</label>
+                    <input type="text" id="txtTarLeda" name="txtTarLeda" class="form-control col-md-6 ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-model="tofesBakashaSismaData.tarLeda" required="" ng-maxlength="10" ng-minlength="10" datepickerpattern="" ng-pattern="/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})|([0-9]{8})/" ng-disabled="userInOvh" date-before="maxTarLeda" date-after="minTarLeda" date-or-equals="true">
+                </div>
+            </div>
+            </div>
+            </div>  
+            </div>
+            
+               <br>
+
+                 <div class="row">
+                      <div class="form-group col-md-3 padR10" ng-hide="userInOvh">
+            <br>
+            <input type="submit" class="btn btn-info" value="שמירה" />
+			<input type="reset" class="btn btn-info" value="איפוס" />
+
+        </form>
+    </div>
+
+</div>
+
+</body></html>
