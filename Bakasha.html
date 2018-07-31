@@ -1,20 +1,39 @@
 ﻿<!DOCTYPE html>
 <html dir="rtl">
-<head>
-	<link rel="stylesheet" href="style.css">
+	
+	<head>
+			<link rel="stylesheet" type="text/css" href="style.css">
+			<link rel="stylesheet" type="text/css" href= "stylesheet.css">
+		   <link rel="stylesheet" type="text/css" href= "bootstrap.css">
 	<title>טופס בקשה ליציאה לקורס</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 	<meta charset="utf-8">
 	<style>
 	h4{color:#009999;}
+	a{color:#fff;}
 	</style>
 </head>
 
-<body class="padR10 padL10 ng-scope" ng-controller="main" ng-init="init();">
+<body>
+  <header>
+        <div class="logo">
+            <a href="home.html"><img src="ETMS.jpg" alt="ETMS" ;width="120" height="120"></a>
+        </div>
+		 <nav class="topnav" id="myTopnav">
+           <ul id="navbar">
+		   <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">תפריט</a></li>
+             <li><a href="C:/Users/Asaf/Desktop/מערכת ניהול הדרכה/TikOved.html">פרופיל אישי</a></li>
+              <li><a href="C:/Users/Asaf/Desktop/מערכת ניהול הדרכה/Bakasha.html">בקשת יציאה לקורס חיצוני</a></li>
+              <li><a href=#>יציאה לקורס פנימי בארגון</a></li>
+              <li><a href=#>קורסים</a></li>
+            </ul>
+        </nav>
+		<a id="logout" href=#>התנתקות</a>
+     </header>
+<body>
     <div id="overlay"></div>
     <div class="row">
-        <div>
             <div class="page-header">
                 <div>
                     <h1 class="headerh1 headrRashi">
@@ -46,7 +65,7 @@
             <div class="row">
                 <div class="form-group col-md-2 col-lg-2">
                     <span class="text-danger"> * </span><label id="lblMisparZehut" class="control-label" for="txtMisparZehut">תעודת זהות</label>
-                        <input type="text" id="txtMisparZehut" name="txtMisparZehut" ng-required="true" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-mispar-zehut" misparzehut="" ng-model="tofesBakashaSismaData.MISPAR_ZEHUT_TIK" ng-pattern="/^(\d)+$/" ng-maxlength="9" ng-blur="bdokIsOvh()" ng-disabled="userInOvh" required pattern="[0-9]{9}">
+                        <input type="number" id="txtMisparZehut" name="txtMisparZehut" ng-required="true" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-mispar-zehut" misparzehut="" ng-model="tofesBakashaSismaData.MISPAR_ZEHUT_TIK" ng-pattern="/^(\d)+$/" ng-maxlength="9" ng-blur="bdokIsOvh()" ng-disabled="userInOvh" required pattern="[0-9]{9}">
 			   </div>
                 <div class="form-group col-md-2 col-lg-2">
                     <span class=" text-danger"> * </span><label id="lblfirstName" class="control-label">שם פרטי</label>
@@ -74,7 +93,7 @@
                       <div class="form-group col-md-4 col-lg-4">
                     <span class="text-danger"> * </span><label id="lblLastName" class="control-label">טלפון סלולרי</label>
                     <div class="form-inline" ng-class="{ 'has-error' : myForm.txtPel.$invalid &amp;&amp; !myForm.txtPel.$pristine  }">
-                        <input type="text" id="txtPel" name="txtPel" ng-model="tofesBakashaSismaData.TELEFON_NAYAD_TIK" ng-required="true" class="form-control col-6 displayInlineBlock ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-pattern="/^(\d)+$/" ng-maxlength="7" ng-minlength="7" ng-disabled="userInOvh" required="required"> -
+                        <input type="tel" id="txtPel" name="txtPel" ng-model="tofesBakashaSismaData.TELEFON_NAYAD_TIK" ng-required="true" class="form-control col-6 displayInlineBlock ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" ng-pattern="/^(\d)+$/" ng-maxlength="7" ng-minlength="7" ng-disabled="userInOvh" required="required"> -
                         <select name="KidometSelect" id="KidometSelect" ng-required="true" ng-options="item.CODE as item.CODE for item in KidometList" ng-model="tofesBakashaSismaData.CODE_KIDOMET" class="form-control col-4 displayInlineBlock ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-disabled="userInOvh" required="required"><option value="?" selected="selected"></option><option label="054" value="string:054">054</option><option label="051" value="string:051">051</option><option label="059" value="string:059">059</option><option label="058" value="string:058">058</option><option label="053" value="string:053">053</option><option label="055" value="string:055">055</option><option label="052" value="string:052">052</option><option label="050" value="string:050">050</option><option label="056" value="string:056">056</option></select>
                     </div>
 
@@ -173,10 +192,25 @@
 		            
 
             <br>
-            <input type="submit" class="btn btn-info" value="שלח בקשה" />
+                   <div class="row">
+                      <div class="form-group col-md-3 padR10" ng-hide="userInOvh">
+            <br>
+            <input type="submit" class="btn btn-info" value="שמירה" />
 			<input type="reset" class="btn btn-info" value="איפוס" />
-<br>
+</div>  
         </form>
-     </div>
+		</div>
+	  <script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 
-</body></html>
+</body>	 	  
+
+</html>
