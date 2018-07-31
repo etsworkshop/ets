@@ -1,5 +1,5 @@
 
-@media (min-width: 500px)
+
 .headerh1 {
     font-size: 36px;
 }
@@ -78,28 +78,66 @@ p {
 }
 
 
-* {
-    webkit-box-sizing: border-box;
-    moz-box-sizing: border-box;
-	box-sizing: border-box;
-	}
+html { 
+	overflow-x:hidden;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	width: 100%;
+    height: 100%;
+	margin:0;
 	
-	p {
+	}
+.logo{
+    padding-right: 5px;
+}
+/* nav bar*/
+nav{
+    width: 70%;
+}
+
+ul{
+    padding-right:15%;
+	list-style-type: none;
+    float: right;
+	
+}
+
+li{
+    float: right;
+    padding: 14px 16px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 200;
+    color: #fff;
+    margin: 0 1px;
+    line-height: 24px;
+    height: 24px;
     display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
 }
 
-
-@media (min-width: 992px)
-body {
-    font-family: Assistant;
-    /* background-color: #F0F0F0; */
+.topnav .icon {
+  display: none;
 }
-body {
-    direction: rtl;
+
+#logout{
+    float: left;
+	padding-left:45px;
+}
+
+header{
+    width: 100%;
+	height:120px;
+	   top:0;
+    left:0;
+	 background: #14BBB1;
+
+}
+
 }
 :after, :before {
     -webkit-box-sizing: border-box;
@@ -143,11 +181,6 @@ h1{
 }
 
 
-
-h4 {
-    font-size: 1.5rem;
-    color: #009999;
-}
 
 
 }margin-top: 10px;
@@ -193,7 +226,7 @@ h1{
 
 .container-fluid{
 	text-align:right;
-    width: 100%;
+    width: 90%;
     padding-right: 30px;
     padding-left: 15px;
     margin-right: auto;
@@ -230,7 +263,7 @@ btn-info {
 
 .form-control {
     display: block;
-    width: 100%;
+    width: auto;
     height: 34px;
     padding: 6px 12px;
     font-size: 14px;
