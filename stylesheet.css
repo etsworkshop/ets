@@ -92,6 +92,28 @@ a{
 
 
 }
+.news {
+	color:#14BBB1;
+	font-size:15px;
+    text-align:center;
+    margin: 0px auto;
+	padding: 10%
+}
+#news1 {
+	float: right;
+	width: 45%;
+	
+}
+#news2 {
+	float: left;
+	width: 45%;
+	
+}
+
+.news #news1 h1{
+	color:#14BBB1;
+}
+
 
 /* my profile page*/
 
