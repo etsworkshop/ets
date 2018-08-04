@@ -1,20 +1,37 @@
-﻿<!DOCTYPE html>
-<html dir="rtl">
-	<head>
-	<link rel="stylesheet" href="style.css">
-	<title>טופס בקשה ליציאה לקורס</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<meta charset="utf-8">
+﻿ <!DOCTYPE HTML>
+  <html dir="rtl">
+<head>
+  		 <TITLE>ETMS</TITLE>   
+  		 <meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  		 <link rel="stylesheet" type="text/css" href= "stylesheet.css">
+		  <link rel="stylesheet" href="style.css">
+		   <link rel="stylesheet" type="text/css" href= "bootstrap.css"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
 	<style>
 	h4{color:#009999;}
-	a{color:#fff;}
+	a{color:#fff;}	
+	#logoAndHead
+{
+	border:none;
+	margin-left:auto;
+	width:5%; 
+}
+#logoimg
+{
+	
+	display: block;
+	width:70%;
+}
+
 	</style>
 </head>
+
+
 <body>
   <header>
-        <div class="logo">
-            <a href="home.html"><img src="ETMS.jpg" alt="ETMS" ;width="120" height="120"></a>
+        <div id="logoAndHead">
+            <a href="home.html"><img id=" logoimg" src="ETMS.jpg" alt="logo" ;width="120" height="120"></a>
         </div>
 		 <nav class="topnav" id="myTopnav">
            <ul id="navbar">
@@ -27,19 +44,18 @@
         </nav>
 		<a id="logout" href=#>התנתקות</a>
      </header>
-	 
-	 
-	 <body class="padR10 padL10 ng-scope" ng-controller="main" ng-init="init();">
+<body>
     <div id="overlay"></div>
     <div class="row">
             <div class="page-header">
                 <div>
                     <h1 class="headerh1 headrRashi">
                       פתיחת תיק עובד <small class="displayInlineBlock ng-binding">תיק מידע אישי של עובד </small>
+
                     </h1>
                </div>    
             </div>
-
+			
             <div id="mainContent">
                 <div class="container-fluid clearfix">
                     <section class="clearfix clear">
@@ -47,28 +63,29 @@
                             <div id="alerts"></div>
                             <div class="clearfix" style="background-color:#fff;margin-top:0px;">
                                 <section class="clearfix clear">
-                                  <div class="container-fluid ng-scope" ng-view=""><div ng-controller="TofesBakashaSismaCtrl" ng-init="init();" class="ng-scope">
+                                  <div class="container-fluid ng-scope" ng-view=""><div ng-controller="TofesBakasha" ng-init="init();" class="ng-scope">
     
     <div class="panel panel-default panel-bakasha paddingAll10">
-	       <form id="Add_User" action="Manage_Users.php" method="post">
+			<form>
             <label class="row tikColor">
                 <strong>                  
                 </strong>
             </label>
             <br><br>
             <p class="mandatory">השדות המסומנים ב<span class="text-danger"> * </span>הם שדות חובה</p>
-			<h4> פרטים אישיים </h4>
+			
+<h4> פרטים אישיים </h4>
             <div class="row">
 				<div class="form-group col-md-2 col-lg-2">
 				<span class="text-danger"> * </span><label id="txtMisparOved" class="control-label" for="txtMisparOved">מספר עובד</label>
-                        <input type="number" id="txtMisparOved" name="txtMisparOved" ng-required="true" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength ng-valid-mispar-zehut" misparzehut="" ng-model="tofesBakashaSismaData.MISPAR_ZEHUT_TIK" ng-pattern="/^(\d)+$/" ng-maxlength="9" ng-blur="bdokIsOvh()" ng-disabled="userInOvh" required="required">
+                        <input type="number" id="txtMisparOved" name="txtMisparOved"class="form-control" required="required">
 				</div>
-				        
-			      <div class="form-group col-md-2 col-lg-2">
-                    <span class="text-danger"> * </span><label id="txtMisparZehut" class="control-label" for="txtMisparZehut">תעודת זהות</label>
-                        <input type="number" id="txtMisparZehut" name="txtMisparZehut" class="form-control" required="required" >
+				     
+				<div class="form-group col-md-2 col-lg-2">
+				 <span class="text-danger"> * </span><label id="txtMisparZehut" class="control-label" for="txtMisparZehut">תעודת זהות</label>
+				<input pattern=".{9,9}" class="form-control" id="txtMisparZehut" oninvalid="InvalidMsg(this);" name="txtMisparZehut" oninput="InvalidMsg(this);"  type="number"  required="required" />				
 			   </div>
-			   
+			  
 				<div class="form-group col-md-2 col-lg-2">
 						<span class=" text-danger"> * </span><label id="txtShemPrati" class="control-label">שם פרטי</label>
                         <input type="text" id="txtShemPrati" name="txtShemPrati" class="form-control" required="required" >
@@ -89,7 +106,7 @@
                </div>
 				 <div class="form-group col-md-2 col-lg-2">
                    <label id="status" class="control-label" for="status">מצב משפחתי</label>
-                    <select name="status" id="status" class="form-control" required="required"><option value="?" selected="selected"></option><option label="נשוי" value="number:1">נשוי</option><option label="גרוש" value="number:2">גרוש</option><option label="רווק/ה" value="number:3">רווק/ה</option></select>
+                    <select name="status" id="status" class="form-control" required="required"><option value="?" selected="selected"></option><option label="נשוי/אה" value="number:1">נשוי/אה</option><option label="גרוש/ה" value="number:2">גרוש/ה</option><option label="רווק/ה" value="number:3">רווק/ה</option><option label="אלמן/ה" value="number:3">אלמן/ה</option></select>
                 </div>
                <div class="form-group col-md-4 col-lg-4">
                    <span class=" text-danger"> * </span><label id="txtEmail" class="control-label">דואר אלקטרוני</label>
@@ -162,6 +179,26 @@
         </form>
 		</div>
 	  <script>
+
+function InvalidMsg(textbox) {
+    
+    if (textbox.value == '') {
+        textbox.setCustomValidity('עליך להזין מספר זהות תקין בן 9 ספרות כולל ספרת ביקורת');
+    }
+    else if(textbox.validity.typeMismatch){
+        textbox.setCustomValidity('עליך להזין מספר זהות תקין בן 9 ספרות כולל ספרת ביקורת');
+    }
+    else {
+        textbox.setCustomValidity('');
+    }
+    return true;
+}
+
+	  myInput.oninput = function () {
+    if (this.value.length > 9) {
+        this.value = this.value.slice(9,9); 
+    }
+}
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {

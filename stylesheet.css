@@ -30,13 +30,13 @@ footer {
     text-align: center;
 }
 
+
 .logo{
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .main {
 padding-right: 15px;
-background-color: #d0e6e8;
 }
 
 
@@ -93,45 +93,6 @@ a{
 
 
 }
-.news {
-	color:#14BBB1;
-	font-size:15px;
-    text-align:center;
-    margin: 0px auto;
-	padding: 10%
-}
-#news1 {
-	float: right;
-	width: 45%;
-	
-}
-#news2 {
-	float: left;
-	width: 45%;
-	
-}
-
-.news h1{
-	color:#14BBB1;
-	font-size:24px;
-	padding: 5px;
-	border: 2px solid #14BBB1;
-    border-radius: 5px;
-}
-.news h2{
-	color:#14BBB1;
-	font-size:18px;
-}
-.news p{
-	color:black;
-	font-size:14px;
-}
-
-.news img{
-	height:15px;
-	width:15px;
-}
-
 
 /* my profile page*/
 
