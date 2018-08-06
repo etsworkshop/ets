@@ -1,0 +1,75 @@
+ <!DOCTYPE HTML>
+  <html dir="rtl">
+<head>
+  		 <TITLE>ETMS</TITLE>   
+  		 <meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  		 <link rel="stylesheet" type="text/css" href= "stylesheet.css">
+		  <link rel="stylesheet" href="style.css">
+		   <link rel="stylesheet" type="text/css" href= "bootstrap.css">
+
+<style> 
+h4,h3{color:#009999;}
+
+</style>		   
+</head>
+
+ <body>
+  <header>
+        <div class="logo">
+            <a href="home_admin.html"><img src="ETMS.jpg" alt="logo" ;width="120" height="120"></a>
+        </div>
+		 <nav class="topnav" id="myTopnav">
+           <ul id="navbar">
+		   <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">תפריט</a></li>
+             <li><a href="Employee_registration.html">רישום עובד</a></li>
+              <li><a href=#>בקשות להדרכה פתוחות</a></li>
+              <li><a href=#>קורסים</a></li>
+              <li><a href=#>דוחות</a></li>
+            </ul>
+        </nav>
+		<a id="logout" href=#>התנתקות</a>
+     </header>
+	 
+	   <div id="overlay"></div>
+    <div class="row">
+            <div class="page-header">
+                    <h3>הוספת משתמש חדש למערכת </h3>	
+            </div>
+	</div>
+			
+<div class="main">
+			<form id="Add_User" action="#" method="post">
+			                <div class="form-group col-md-4 col-lg-4">
+                    <span class=" text-danger"> * </span><label id="UserName" class="control-label"> הזן מייל של המשתמש (ישמש כשם משתמש)</label>
+                        <input type="email" id="UserName" name="UserName" class="form-control" required="required"> 
+                </div>
+			  <div class="form-group col-md-2 col-lg-2">
+                    <span class="text-danger"> * </span><label id="password" class="control-label">הזן ת.ז של המשתמש (ישמש כסיסמה)</label>
+                        <input type="password" id="password" name="password" class="form-control" required="required" >
+			   </div>
+			       <div class="form-group col-md-2 col-lg-2">
+                     <span class=" text-danger"> * </span><label id="Premission" class="control-label">בחר הרשאות</label>
+                    <select name="Premission" id="Premission"  class="form-control" required="required"><option value="?" selected="selected"></option><option label="Admin" value="number:1">Admin</option><option label="General" value="number:2">General</option></select>
+               </div>
+		   		
+            <input type="submit" name="AddUser" class="btn btn-info" value="לחץ להוספת משתמש חדש" />
+
+        </form>
+	
+</div>
+	 	  <footer>&copy; כל הזכויות שמורות</footer>
+
+
+	  <script>
+function 	 myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+	</body>
+  </html>

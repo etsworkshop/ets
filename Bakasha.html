@@ -1,24 +1,37 @@
-﻿<!DOCTYPE html>
-<html dir="rtl">
-	
-	<head>
-			<link rel="stylesheet" type="text/css" href="style.css">
-			<link rel="stylesheet" type="text/css" href= "stylesheet.css">
-		   <link rel="stylesheet" type="text/css" href= "bootstrap.css">
-	<title>טופס בקשה ליציאה לקורס</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<meta charset="utf-8">
+﻿ <!DOCTYPE HTML>
+  <html dir="rtl">
+<head>
+  		 <TITLE>ETMS</TITLE>   
+  		 <meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  		 <link rel="stylesheet" type="text/css" href= "stylesheet.css">
+		  <link rel="stylesheet" href="style.css">
+		   <link rel="stylesheet" type="text/css" href= "bootstrap.css"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
 	<style>
 	h4{color:#009999;}
-	a{color:#fff;}
+	a{color:#fff;}	
+	#logoAndHead
+{
+	border:none;
+	margin-left:auto;
+	width:5%; 
+}
+#logoimg
+{
+	
+	display: block;
+	width:70%;
+}
+
 	</style>
 </head>
 
+
 <body>
   <header>
-        <div class="logo">
-            <a href="home.html"><img src="ETMS.jpg" alt="ETMS" ;width="120" height="120"></a>
+        <div id="logoAndHead">
+            <a href="home.html"><img id=" logoimg" src="ETMS.jpg" alt="logo" ;width="120" height="120"></a>
         </div>
 		 <nav class="topnav" id="myTopnav">
            <ul id="navbar">
@@ -31,7 +44,7 @@
         </nav>
 		<a id="logout" href=#>התנתקות</a>
      </header>
-<body>
+
     <div id="overlay"></div>
     <div class="row">
             <div class="page-header">
@@ -52,7 +65,8 @@
                                   <div class="container-fluid ng-scope" ng-view=""><div ng-controller="TofesBakasha" ng-init="init();" class="ng-scope">
     
     <div class="panel panel-default panel-bakasha paddingAll10">
-			<form>
+		<form id="Add_Bakasha" action="#" method="post">
+
             <label class="row tikColor">
                 <strong>                  
 				לידיעתך, מילוי הטופס הינו חלק מתהליך הגשת בקשה ליציאת להדרכה/קורס שאינו במסגרת הארגון, אך אין בו כדי להבטיח את אישור יציאתך לקורס הנ"ל
@@ -65,7 +79,7 @@
             <div class="row">
                 <div class="form-group col-md-2 col-lg-2">
                     <span class="text-danger"> * </span><label id="txtMisparZehut" class="control-label" for="txtMisparZehut">תעודת זהות</label>
-                        <input type="number" id="txtMisparZehut" name="txtMisparZehut" class="form-control" required="required" >
+                        <input type="text" id="txtMisparZehut" name="txtMisparZehut" class="form-control" required="required" >
 			   </div>
                 <div class="form-group col-md-2 col-lg-2">
                     <span class=" text-danger"> * </span><label id="txtShemPrati" class="control-label">שם פרטי</label>
@@ -74,31 +88,13 @@
                 <div class="form-group col-md-2 col-lg-2">
                     <span class=" text-danger"> * </span><label id="txtShemMishpacha" class="control-label">שם משפחה</label>
                         <input type="text" id="txtShemMishpacha" name="txtShemMishpacha" class="form-control" required="required" >
-                  
                 </div>
-                <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
-                    <span class=" text-danger"> * </span><label id = "txtTarLeda" class="control-label">תאריך לידה</label>
-                      <input type="date" id="txtTarLeda" name="txtTarLeda" class="form-control" required="required">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-2 col-lg-2">
-                    <span class=" text-danger"> * </span><label id="MinSelect" class="control-label" for="MinSelect">מין</label>
-                    <select name="MinSelect" id="MinSelect"  class="form-control" required="required"><option value="?" selected="selected"></option><option label="זכר" value="number:1">זכר</option><option label="נקבה" value="number:2">נקבה</option></select>
-                </div>
-                <div class="form-group col-md-4 col-lg-4">
+				                <div class="form-group col-md-4 col-lg-4">
                     <span class=" text-danger"> * </span><label id="txtEmail" class="control-label">דואר אלקטרוני</label>
                         <input type="email" id="txtEmail" name="txtEmail" class="form-control" required="required"> 
                 </div>
-                      <div class="form-group col-md-4 col-lg-4">
-                    <span class="text-danger"> * </span><label id="txtPel" class="control-label">טלפון סלולרי</label>
-                    <div class="form-inline"> 
-                        <input type="tel" id="txtPel" name="txtPel" class="form-control" required="required"> -
-                        <select name="KidometSelect" id="KidometSelect" class="form-control" required="required"><option value="?" selected="selected"></option><option label="054" value="string:054">054</option><option label="051" value="string:051">051</option><option label="059" value="string:059">059</option><option label="058" value="string:058">058</option><option label="053" value="string:053">053</option><option label="055" value="string:055">055</option><option label="052" value="string:052">052</option><option label="050" value="string:050">050</option><option label="056" value="string:056">056</option></select>
-                    </div>
+            </div>
 
-                </div>
-			</div>
 			
             <br>
 
@@ -118,11 +114,25 @@
          </div>
 		 
 		             <div class="row">
-					<div class="form-group col-md-4 col-lg-4">
+					 <div class="form-group col-md-2 col-lg-2">
                     <span class=" text-danger"> * </span><label id="priceOfKurse" class="control-label">עלות הקורס</label>
                         <input type="number" id="priceOfKurse" name="priceOfKurse" class="form-control" required="required"> 
                 </div>
+				   <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                    <span class=" text-danger"> * </span><label id = "CourseStartDate" class="control-label">מועד תחילת הקורס</label>
+                      <input type="date" id="CourseStartDate" name="CourseStartDate" class="form-control" required="required">
+                </div>
+				   <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                    <span class=" text-danger"> * </span><label id = "CourseCmpletionDate" class="control-label">מועד סיום הקורס</label>
+                      <input type="date" id="CourseCmpletionDate" name="CourseCmpletionDate" class="form-control" required="required">
+                </div>
+				  <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                    <span class=" text-danger"> * </span><label id = "NumberOfDaysOfAbsence" class="control-label">סה"כ מס' ימי היעדרות</label>
+                      <input type="number" id="NumberOfDaysOfAbsence" name="NumberOfDaysOfAbsence" class="form-control" required="required">
+                </div>
+				
          </div>
+		 <br>
                 <h4> צירוף סילבוס</h4>
                 <div class="row tikColor">
                     <strong>
@@ -132,7 +142,7 @@
                         <br>
                         מחובתך לבדוק שהמסמכים קריאים וניתנים להדפסה.
                         <br>
-                        <br><br>
+                        <br>
                     </strong>
                 </div>
 
@@ -174,14 +184,16 @@
 
             <br>
                    <div class="row">
-                      <div class="form-group col-md-3 padR10" ng-hide="userInOvh">
+                      <div class="form-group col-md-3 padR10">
             <br>
-            <input type="submit" class="btn btn-info" value="שמירה" />
-			<input type="reset" class="btn btn-info" value="איפוס" />
+            <input type="submit" name="AddBakasha" class="btn btn-info" value="שמירה" />
+			<input type="reset" name="AddBakasha" class="btn btn-info" value="איפוס" />
 </div>  
         </form>
 		</div>
+	  	 	  <footer>&copy; כל הזכויות שמורות</footer>
 	  <script>
+	  
 function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
