@@ -25,6 +25,25 @@
 }
 
 	</style>
+<script>
+
+function validateForm() {
+    var txtMisparZehut = document.forms["Add_Bakasha"]["txtMisparZehut"].value;
+    if (txtMisparZehut.length != 9) {
+        alert("יש להזין תעודת זהות בת 9 ספרות");
+        return false;
+    }
+}
+
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
 </head>
 
 
@@ -65,7 +84,7 @@
                                   <div class="container-fluid ng-scope" ng-view=""><div ng-controller="TofesBakasha" ng-init="init();" class="ng-scope">
     
     <div class="panel panel-default panel-bakasha paddingAll10">
-		<form id="Add_Bakasha" action="#" method="post">
+		<form id="Add_Bakasha" action="#" onsubmit="return validateForm()" method="post">
 
             <label class="row tikColor">
                 <strong>                  
@@ -192,18 +211,6 @@
         </form>
 		</div>
 	  	 	  <footer>&copy; כל הזכויות שמורות</footer>
-	  <script>
-	  
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-}
-</script>
-
 </body>	 	  
 
 </html>
