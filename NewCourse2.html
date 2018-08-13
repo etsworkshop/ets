@@ -1,0 +1,145 @@
+ <!DOCTYPE HTML>
+  <html dir="rtl">
+<head>
+  		 <TITLE>ETMS</TITLE>   
+  		 <meta charset="UTF-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1">
+  		 <link rel="stylesheet" type="text/css" href= "stylesheet.css">
+		  <link rel="stylesheet" href="style.css">
+		   <link rel="stylesheet" type="text/css" href= "bootstrap.css">
+
+<style> 
+h4,h3{color:#009999;}
+
+</style>		   
+</head>
+
+ <body>
+  <header>
+        <div class="logo">
+            <a href="home_admin.html"><img src="ETMS.jpg" alt="logo" ;width="120" height="120"></a>
+        </div>
+		 <nav class="topnav" id="myTopnav">
+           <ul id="navbar">
+		   <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">תפריט</a></li>
+             <li><a href=#>רישום עובד</a></li>
+              <li><a href=#>בקשות להדרכה פתוחות</a></li>
+              <li><a href=#>ניהול קורסים</a></li>
+              <li><a href=#>דוחות</a></li>
+            </ul>
+        </nav>
+		<a id="logout" href=#>התנתקות</a>
+     </header>
+	 
+	   <div id="overlay"></div>
+    <div class="row">
+            <div class="page-header">
+                    <h3>הוספת קורס חדש </h3>	
+            </div>
+	</div>
+			
+<div class="main">
+
+			<form id="Add_Course" action="#" method="post">
+			<div class="form-group col-md-2 col-lg-2">
+                  <span class="text-danger"> * </span> <label id="Machlaka" class="control-label" for="Machlaka">מחלקה</label>
+                    <select name="Machlaka" id="Machlaka" class="form-control" required="required"><option value="?" selected="selected"></option><option label="Hr" value="number:1">Hr</option><option label="It" value="number:2">It</option><option label="Development" value="number:3">Development</option><option label ="Finance" value="number:4">Finance"</option><option label="General" value="number:5">Finance</option></select>
+                </div>
+			          <div class="form-group col-md-2 col-lg-2">
+                    <span class=" text-danger"> * </span><label id="courseCode" class="control-label"> קוד קורס</label>
+                        <input type="text" id="courseCode" name="courseCode" class="form-control" required="required"> 
+                </div>
+			              <div class="form-group col-md-2 col-lg-2">
+                    <span class=" text-danger"> * </span><label id="courseName" class="control-label"> שם הקורס</label>
+                        <input type="text" id="courseName" name="courseName" class="form-control" required="required"> 
+                </div>
+			   <div class="form-group col-md-2 col-lg-2">
+                    <span class="text-danger"> * </span><label id="courseGuide" class="control-label">מדריך הקורס</label>
+                        <input type="text" id="courseGuide" name="courseGuide" class="form-control" required="required" >
+			   </div>
+			   <div class="form-group col-md-4 col-lg-4">
+                   <span class=" text-danger"> * </span><label id="courseGuideEmail" class="control-label">דואר אלקטרוני של מדריך הקורס</label>
+                        <input type="email" id="courseGuideEmail" name="courseGuideEmail" class="form-control" required="required"> 
+                 </div>
+			       <div class="form-group col-md-2 col-lg-2">
+                     <span class=" text-danger"> * </span><label id="passingGrade" class="control-label">ציון מינימלי למעבר</label>
+                    <input type="text" name="passingGrade" id="passingGrade"  class="form-control" required="required">
+               </div>
+
+			        <div class="form-group col-md-2 col-lg-2">
+                                                <span class=" text-danger"> * </span><label id="priceOfKurse" class="control-label">עלות הקורס</label>
+                                                <input type="number" id="priceOfKurse" name="priceOfKurse" class="form-control" required="required">
+                                            </div>
+                                            <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                                                <span class=" text-danger"> * </span><label id="CourseStartDate" class="control-label">מועד תחילת הקורס</label>
+                                                <input type="date" id="CourseStartDate" name="CourseStartDate" class="form-control" required="required">
+                                            </div>
+                                            <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                                                <span class=" text-danger"> * </span><label id="CourseCmpletionDate" class="control-label">מועד סיום הקורס</label>
+                                                <input type="date" id="CourseCmpletionDate" name="CourseCmpletionDate" class="form-control" required="required">
+                                            </div>
+                                         <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                                                <span class=" text-danger"> * </span><label id="NumberOfDaysOfAbsence" class="control-label">יום ושעות</label>
+												<br>
+                                                <textarea id="NumberOfDaysOfAbsence" name="NumberOfDaysOfAbsence" rows="5" cols="30" maxlength="200" wrap="hard"></textarea>
+                                            </div>
+											  <div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                                                <span class=" text-danger"> * </span><label id="NumberOfDaysOfAbsence" class="control-label">סה"כ מס' ימי היעדרות</label>
+                                                <input type="number" id="NumberOfDaysOfAbsence" name="NumberOfDaysOfAbsence" class="form-control" required="required">
+                                            </div>
+											<div class="form-group col-md-3 col-lg-3 tikPopUpDate">
+                                                <span class=" text-danger"> * </span><label id="NumberOfDaysOfAbsence" class="control-label">מועדי בחינות</label>
+												<br>
+                                                <textarea id="NumberOfDaysOfAbsence" name="NumberOfDaysOfAbsence" rows="5" cols="30" maxlength="200" wrap="hard"></textarea>
+                                            </div>
+		
+				  <h4> צירוף סילבוס</h4>
+                                        <div class="row tikColor">
+                                            <strong>
+                                                ניתן לצרף מסמכי PDF בלבד
+                                                <br>
+                                                יש לצרף מסמכים תקינים, סרוקים ע"י סורק או ע"י אפליקציית סריקה בלבד.
+                                                <br>
+                                                מחובתך לבדוק שהמסמכים קריאים וניתנים להדפסה.
+                                                <br>
+                                                <br>
+                                            </strong>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col-md-3 padR10" ng-hide="userInOvh">
+                                                <div class="form-group">
+                                                    <span class="text-danger"> * </span><label class="control-label">סילבוס </label>
+                                                    <input class="form-control-file" id="inputFile" aria-describedby="fileHelp" type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+										
+										   <br>
+                                        <div class="row">
+                                            <div class="form-group col-md-3 padR10">
+                                                <br>
+                                                <input type="submit" name="Add_Course" class="btn btn-info" value="לחץ להוספת קורס חדש למערכת " />
+                                            </div>
+                                        </div>
+<br>
+<br>
+
+        </form>
+	
+</div>
+	 	  <footer>&copy; כל הזכויות שמורות</footer>
+
+
+	  <script>
+function 	 myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+	</body>
+  </html>
